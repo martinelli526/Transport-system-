@@ -1,37 +1,47 @@
 import java.util.Scanner;
+
 public class main {
     public static void main(String[] args) {
 
-       
-        Driver driver1 = new Driver("James", 101);
-        Driver driver2 = new Driver ("Linda", 102);
+        Scanner keyboard = new Scanner(System.in);
 
-        // Create passengers
-        Passenger passenger1 = new Passenger("Sarah", 201, 1001);
-        Passenger passenger2 = new Passenger("Michael", 202, 1002);
+        try {
 
-       
-        Bus bus1 = new Bus("KAA123B", 80, 50);
-        Taxi taxi1 = new Taxi("KAB456C", 100, 12);
+            System.out.print("Enter driver name: ");
+            String driverName = keyboard.nextLine();
 
-      
-        System.out.println(driver1.getRole());
-        driver1.drive();
-        driver1.performMaintenance();
+            System.out.print("Enter driver ID: ");
+            int driverId = keyboard.nextInt();
+            keyboard.nextLine();
 
-        System.out.println(passenger1.getRole());
-        passenger1.boardVehicle();
+            Driver driver = new Driver(driverName, driverId);
 
-        System.out.println("Bus fare for 15km: " + bus1.calculateFare(15));
-        bus1.trackLocation();
+            System.out.print("Enter passenger name: ");
+            String passengerName = keyboard.nextLine();
 
-        System.out.println("Taxi fare for 10km: " + taxi1.calculateFare(10));
-        taxi1.trackLocation();
+            System.out.print("Enter passenger ID: ");
+            int passengerId = keyboard.nextInt();
 
-        Scanner keyboard=new Scanner (System.in);
-        System.out.println("Hello Kindly enter your name");
-        String name = keyboard.nextLine();
-        System.out.println("Kindly enter your ID");
-        int id=keyboard.nextInt();
+            System.out.print("Enter ticket number: ");
+            int ticketNumber = keyboard.nextInt();
 
+            Passenger passenger = new Passenger(passengerName, passengerId, ticketNumber);
+
+            System.out.print("Enter bus registration number: ");
+            keyboard.nextLine();
+            String busReg = keyboard.nextLine();
+
+            System.out.print("Enter bus speed: ");
+            double busSpeed = keyboard.nextDouble();
+
+            System.out.print("Enter bus fare rate per km: ");
+            double busRate = keyboard.nextDouble();
+
+           
+        } catch (Exception e) {
+            System.out.println("Invalid input detected. Please enter the correct data type.");
+        }
+
+        keyboard.close();
     }
+}
