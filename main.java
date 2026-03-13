@@ -1,4 +1,5 @@
-public class Main {
+import java.util.Scanner;
+public class main {
     public static void main(String[] args) {
 
        
@@ -26,5 +27,11 @@ public class Main {
 
         System.out.println("Taxi fare for 10km: " + taxi1.calculateFare(10));
         taxi1.trackLocation();
+
+        Scanner keyboard=new Scanner (System.in);
+        System.out.println("Hello Kindly enter your name");
+        String name = keyboard.nextLine();
+        System.out.println("Kindly enter your ID");
+        int id=keyboard.nextInt();
+
     }
-}
