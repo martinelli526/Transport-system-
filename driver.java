@@ -1,6 +1,5 @@
 public class Driver extends User implements Maintainable {
 
-
     public Driver(String name, int id) {
         super(name, id);
     }
@@ -13,7 +12,13 @@ public class Driver extends User implements Maintainable {
     public void drive() {
         System.out.println(getName() + " is driving the vehicle.");
     }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println(getName() + " is performing vehicle maintenance.");
+    }
 }
     
 
+   
    
