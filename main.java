@@ -72,7 +72,7 @@ public class Main {
 
             System.out.print("Enter driver ID: ");
             int driverId = keyboard.nextInt();
-            keyboard.nextLine(); // consume newline
+            keyboard.nextLine(); 
 
             Driver driver = new Driver(driverName, driverId);
             drivers.add(driver);
